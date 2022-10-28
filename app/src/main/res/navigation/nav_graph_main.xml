@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main.xml"
+    app:startDestination="@id/fragmentNumber">
+
+    <fragment
+        android:id="@+id/fragmentBottle"
+        android:name="my.lovely.randomizer2.screens.FragmentBottle"
+        android:label="fragment_bottle"
+        tools:layout="@layout/fragment_bottle" />
+    <fragment
+        android:id="@+id/fragmentCoin"
+        android:name="my.lovely.randomizer2.screens.FragmentCoin"
+        android:label="fragment_coin"
+        tools:layout="@layout/fragment_coin" />
+    <fragment
+        android:id="@+id/fragmentDice"
+        android:name="my.lovely.randomizer2.screens.FragmentDice"
+        android:label="fragment_dice"
+        tools:layout="@layout/fragment_dice" />
+    <fragment
+        android:id="@+id/fragmentNumber"
+        android:name="my.lovely.randomizer2.screens.FragmentNumber"
+        android:label="fragment_number"
+        tools:layout="@layout/fragment_number" />
+    <fragment
+        android:id="@+id/fragmentTeams"
+        android:name="my.lovely.randomizer2.screens.FragmentTeams"
+        android:label="fragment_teams"
+        tools:layout="@layout/fragment_teams" />
+</navigation>

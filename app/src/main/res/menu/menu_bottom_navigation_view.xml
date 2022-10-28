@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/FragmentBottle"
-        android:title="@string/bottle" />
+        android:id="@+id/fragmentBottle"
+        android:title="@string/bottle"
+        android:icon="@drawable/ic_example"/>
 
     <item
-        android:id="@+id/FragmentChee"
-        android:title="@string/chee" />
+        android:id="@+id/fragmentCoin"
+        android:title="@string/coin"
+        android:icon="@drawable/ic_example"/>
+    <item
+        android:id="@+id/fragmentDice"
+        android:title="@string/dice"
+        android:icon="@drawable/ic_example"/>
 
     <item
-        android:id="@+id/FragmentCoin"
-        android:title="@string/coin" />
+        android:id="@+id/fragmentNumber"
+        android:title="@string/number"
+        android:icon="@drawable/ic_example"/>
 
     <item
-        android:id="@+id/FragmentDice"
-        android:title="@string/dice" />
+        android:id="@+id/fragmentTeams"
+        android:title="@string/teams"
+        android:icon="@drawable/ic_example"/>
 
-    <item
-        android:id="@+id/FragmentNumber"
-        android:title="@string/number" />
 
-    <item
-        android:id="@+id/FragmentTeams"
-        android:title="@string/teams" />
+
+
 
 </menu>
