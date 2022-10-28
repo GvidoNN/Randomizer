@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="coin">Монетка</string>
+    <string name="bottle">Бутылочка</string>
+    <string name="teams">Команды</string>
+    <string name="number">Цифра</string>
+    <string name="dice">Кости</string>
+    <string name="chee">Чи</string>
+</resources>
