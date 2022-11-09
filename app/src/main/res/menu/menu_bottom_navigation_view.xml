@@ -3,26 +3,31 @@
     <item
         android:id="@+id/fragmentBottle"
         android:title="@string/bottle"
-        android:icon="@drawable/ic_example"/>
+        android:icon="@drawable/ic_example"
+        android:orderInCategory="2"/>
 
     <item
         android:id="@+id/fragmentCoin"
         android:title="@string/coin"
-        android:icon="@drawable/ic_example"/>
+        android:icon="@drawable/ic_example"
+        android:orderInCategory="3"/>
     <item
         android:id="@+id/fragmentDice"
         android:title="@string/dice"
-        android:icon="@drawable/ic_example"/>
+        android:icon="@drawable/ic_example"
+        android:orderInCategory="1"/>
 
     <item
         android:id="@+id/fragmentNumber"
         android:title="@string/number"
-        android:icon="@drawable/ic_example"/>
+        android:icon="@drawable/ic_example"
+        android:orderInCategory="4"/>
 
     <item
         android:id="@+id/fragmentTeams"
         android:title="@string/teams"
-        android:icon="@drawable/ic_example"/>
+        android:icon="@drawable/ic_example"
+        android:orderInCategory="5"/>
 
 
 

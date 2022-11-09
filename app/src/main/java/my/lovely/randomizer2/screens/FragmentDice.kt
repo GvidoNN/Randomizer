@@ -1,9 +1,7 @@
 package my.lovely.randomizer2.screens
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import my.lovely.randomizer2.R
@@ -13,14 +11,6 @@ class FragmentDice : Fragment(R.layout.fragment_dice) {
     lateinit var imDice1: ImageView
     lateinit var imDice2: ImageView
     lateinit var imDice3: ImageView
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

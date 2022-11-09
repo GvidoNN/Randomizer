@@ -3,136 +3,136 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_main"
-    app:startDestination="@id/fragmentNumber">
+    app:startDestination="@id/fragmentCoin">
 
     <fragment
         android:id="@+id/fragmentBottle"
         android:name="my.lovely.randomizer2.screens.FragmentBottle"
         android:label="fragment_bottle"
-        tools:layout="@layout/fragment_bottle" >
+        tools:layout="@layout/fragment_bottle">
         <action
             android:id="@+id/action_fragmentBottle_to_fragmentDice"
             app:destination="@id/fragmentDice"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentBottle_to_fragmentTeams"
             app:destination="@id/fragmentTeams"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentBottle_to_fragmentCoin"
             app:destination="@id/fragmentCoin"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentBottle_to_fragmentNumber"
             app:destination="@id/fragmentNumber"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/fragmentCoin"
         android:name="my.lovely.randomizer2.screens.FragmentCoin"
         android:label="fragment_coin"
-        tools:layout="@layout/fragment_coin" >
+        tools:layout="@layout/fragment_coin">
         <action
             android:id="@+id/action_fragmentCoin_to_fragmentDice"
             app:destination="@id/fragmentDice"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentCoin_to_fragmentBottle"
             app:destination="@id/fragmentBottle"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentCoin_to_fragmentTeams"
             app:destination="@id/fragmentTeams"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentCoin_to_fragmentNumber"
             app:destination="@id/fragmentNumber"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDice"
         android:name="my.lovely.randomizer2.screens.FragmentDice"
         android:label="fragment_dice"
-        tools:layout="@layout/fragment_dice" >
+        tools:layout="@layout/fragment_dice">
         <action
             android:id="@+id/action_fragmentDice_to_fragmentCoin"
             app:destination="@id/fragmentCoin"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentDice_to_fragmentBottle"
             app:destination="@id/fragmentBottle"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentDice_to_fragmentTeams"
             app:destination="@id/fragmentTeams"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentDice_to_fragmentNumber"
             app:destination="@id/fragmentNumber"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/fragmentNumber"
         android:name="my.lovely.randomizer2.screens.FragmentNumber"
         android:label="fragment_number"
-        tools:layout="@layout/fragment_number" >
+        tools:layout="@layout/fragment_number">
         <action
             android:id="@+id/action_fragmentNumber_to_fragmentTeams"
             app:destination="@id/fragmentTeams"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentNumber_to_fragmentBottle"
             app:destination="@id/fragmentBottle"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentNumber_to_fragmentDice"
             app:destination="@id/fragmentDice"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentNumber_to_fragmentCoin"
             app:destination="@id/fragmentCoin"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/fragmentTeams"
         android:name="my.lovely.randomizer2.screens.FragmentTeams"
         android:label="fragment_teams"
-        tools:layout="@layout/fragment_teams" >
+        tools:layout="@layout/fragment_teams">
         <action
             android:id="@+id/action_fragmentTeams_to_fragmentBottle"
             app:destination="@id/fragmentBottle"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentTeams_to_fragmentDice"
             app:destination="@id/fragmentDice"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentTeams_to_fragmentCoin"
             app:destination="@id/fragmentCoin"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentTeams_to_fragmentNumber"
             app:destination="@id/fragmentNumber"
             app:popUpTo="@+id/nav_graph_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
