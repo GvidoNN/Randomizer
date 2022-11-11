@@ -28,7 +28,7 @@ class FragmentBottle : Fragment(R.layout.fragment_bottle) {
 
     private fun rollBottle() {
         imBottle.animate().apply {
-            duration = (3000..5000).random().toLong()
+            duration = (2000..4000).random().toLong()
             rotation(randomPosition())
             imBottle.isClickable = false
         }.withEndAction {

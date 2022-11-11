@@ -15,9 +15,9 @@ class FragmentNumber : Fragment(R.layout.fragment_number) {
 
     lateinit var countValuesSlider: Slider
     lateinit var btResult: Button
-    lateinit var edMinValue : EditText
-    lateinit var edMaxValue : EditText
-    lateinit var tvConclusion : TextView
+    lateinit var edMinValue: EditText
+    lateinit var edMaxValue: EditText
+    lateinit var tvConclusion: TextView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,7 +34,7 @@ class FragmentNumber : Fragment(R.layout.fragment_number) {
         tvConclusion = requireView().findViewById(R.id.tvConclusion)
     }
 
-    private fun sliderListener(){
+    private fun sliderListener() {
         countValuesSlider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
             override fun onStartTrackingTouch(slider: Slider) {
                 Log.d("MyLog", "Start Tracking Touch")
@@ -42,44 +42,56 @@ class FragmentNumber : Fragment(R.layout.fragment_number) {
 
             override fun onStopTrackingTouch(slider: Slider) {
                 Log.d("MyLog", countValuesSlider.value.toInt().toString())
-
             }
         })
     }
 
-    private fun buttonClick(){
-        btResult.setOnClickListener{
-            if(edMaxValue.text.toString() == "" || edMinValue.text.toString() == "" ){
-                Log.d("MyLog","Пусто")
-
+    private fun buttonClick() {
+        btResult.setOnClickListener {
+            if (edMaxValue.text.toString() == "" || edMinValue.text.toString() == "") {
+                Log.d("MyLog", "Пусто")
+            } else {
+                randomNumbers(
+                    edMinValue.text.toString().toInt(),
+                    edMaxValue.text.toString().toInt(),
+                    countValuesSlider.value.toInt()
+                ).toString()
             }
-            else{
-                randomNumbers(edMinValue.text.toString().toInt(),edMaxValue.text.toString().toInt(),countValuesSlider.value.toInt()).toString()
-            }
-
         }
-        if(edMaxValue.text.toString() == "" || edMinValue.text.toString() == "" ){
-            Log.d("MyLog","Пусто")
-        }
-        else{
-            btResult.setOnClickListener{
-                Log.d("MyLog",randomNumbers(edMinValue.text.toString().toInt(),edMaxValue.text.toString().toInt(),countValuesSlider.value.toInt()).toString())
-                editText(randomNumbers(edMinValue.text.toString().toInt(),edMaxValue.text.toString().toInt(),countValuesSlider.value.toInt()))
+        if (edMaxValue.text.toString() == "" || edMinValue.text.toString() == "") {
+            Log.d("MyLog", "Пусто")
+        } else {
+            btResult.setOnClickListener {
+                Log.d(
+                    "MyLog",
+                    randomNumbers(
+                        edMinValue.text.toString().toInt(),
+                        edMaxValue.text.toString().toInt(),
+                        countValuesSlider.value.toInt()
+                    ).toString()
+                )
+                editText(
+                    randomNumbers(
+                        edMinValue.text.toString().toInt(),
+                        edMaxValue.text.toString().toInt(),
+                        countValuesSlider.value.toInt()
+                    )
+                )
 
             }
         }
 
     }
 
-    private fun randomNumbers(min: Int, max: Int, count: Int): ArrayList<Int>{
+    private fun randomNumbers(min: Int, max: Int, count: Int): ArrayList<Int> {
         var randomArray = arrayListOf<Int>()
-        for(i in 1..count){
+        for (i in 1..count) {
             randomArray.add((min..max).random())
         }
         return randomArray
     }
 
-    private fun editText(numbers: ArrayList<Int>){
+    private fun editText(numbers: ArrayList<Int>) {
         var text = ""
         numbers.forEach { text += "  $it" }
         tvConclusion.text = text

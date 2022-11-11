@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import my.lovely.randomizer2.R
 
 class FragmentDice : Fragment(R.layout.fragment_dice) {
@@ -26,12 +28,15 @@ class FragmentDice : Fragment(R.layout.fragment_dice) {
     private fun onDiceTap() {
         findView()
         imDice1.setOnClickListener {
+            imDice1.setImageResource(R.drawable.ic_cube)
             rollDice(randomNumber(), imDice1)
         }
         imDice2.setOnClickListener {
+            imDice2.setImageResource(R.drawable.ic_cube)
             rollDice(randomNumber(), imDice2)
         }
         imDice3.setOnClickListener {
+            imDice3.setImageResource(R.drawable.ic_cube)
             rollDice(randomNumber(), imDice3)
         }
     }

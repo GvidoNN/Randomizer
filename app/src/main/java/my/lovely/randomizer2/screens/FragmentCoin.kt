@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import my.lovely.randomizer2.R
 
 class FragmentCoin : Fragment(R.layout.fragment_coin) {
@@ -20,13 +23,15 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
     private fun onCoinTap() {
         iv_coin = requireView().findViewById(R.id.iv_coin)
         iv_coin.setOnClickListener {
-            val randomNumber = (1..2).random()
-            if (randomNumber == 1) {
-                flipTheCoin(R.drawable.ic_reshka)
-                editText(R.string.tail)
-            } else {
-                flipTheCoin(R.drawable.ic_orel)
-                editText(R.string.head)
+            lifecycleScope.launch{
+                val randomNumber = (1..2).random()
+                if (randomNumber == 1) {
+                    flipTheCoin(R.drawable.ic_reshka)
+                    editText(R.string.tail)
+                } else {
+                    flipTheCoin(R.drawable.ic_orel)
+                    editText(R.string.head)
+                }
             }
         }
     }
@@ -42,10 +47,11 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
         }.start()
     }
 
-    private fun editText(stringId: Int) {
+    private suspend fun editText(stringId: Int) {
         tv_tap = requireView().findViewById(R.id.tvTap)
         tv_tap.visibility = View.INVISIBLE
+        delay(1000)
         tv_tap.text = getString(stringId)
-        android.os.Handler().postDelayed({ tv_tap.visibility = View.VISIBLE }, 1000)
+        tv_tap.visibility = View.VISIBLE
     }
 }
