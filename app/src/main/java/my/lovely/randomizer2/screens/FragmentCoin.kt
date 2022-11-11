@@ -7,25 +7,24 @@ import android.widget.ImageView
 import android.widget.TextView
 import my.lovely.randomizer2.R
 
-class FragmentCoin : Fragment(R.layout.fragment_coin){
+class FragmentCoin : Fragment(R.layout.fragment_coin) {
 
-    lateinit var iv_coin : ImageView
-    lateinit var tv_tap : TextView
+    lateinit var iv_coin: ImageView
+    lateinit var tv_tap: TextView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onCoinTap()
     }
 
-    private fun onCoinTap(){
+    private fun onCoinTap() {
         iv_coin = requireView().findViewById(R.id.iv_coin)
-        iv_coin.setOnClickListener{
+        iv_coin.setOnClickListener {
             val randomNumber = (1..2).random()
-            if(randomNumber == 1) {
+            if (randomNumber == 1) {
                 flipTheCoin(R.drawable.ic_reshka)
                 editText(R.string.tail)
-                }
-            else {
+            } else {
                 flipTheCoin(R.drawable.ic_orel)
                 editText(R.string.head)
             }
@@ -43,7 +42,7 @@ class FragmentCoin : Fragment(R.layout.fragment_coin){
         }.start()
     }
 
-    private fun editText(stringId : Int){
+    private fun editText(stringId: Int) {
         tv_tap = requireView().findViewById(R.id.tvTap)
         tv_tap.visibility = View.INVISIBLE
         tv_tap.text = getString(stringId)

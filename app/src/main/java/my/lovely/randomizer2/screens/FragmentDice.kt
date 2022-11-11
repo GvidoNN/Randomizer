@@ -17,7 +17,7 @@ class FragmentDice : Fragment(R.layout.fragment_dice) {
         onDiceTap()
     }
 
-    private fun findView(){
+    private fun findView() {
         imDice1 = requireView().findViewById(R.id.imDice1)
         imDice2 = requireView().findViewById(R.id.imDice2)
         imDice3 = requireView().findViewById(R.id.imDice3)
