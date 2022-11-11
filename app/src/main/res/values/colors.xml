@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="coinFill">#C1B22F</color>
     <color name="coinAround">#D6C635</color>
+    <color name="coinBackground">#1DADED</color>
 </resources>
