@@ -17,4 +17,7 @@
     <string name="min_value">Минимальное значеие</string>
     <string name="count_value">Количество значений</string>
     <string name="generate">Сгенерировать</string>
+    <!--                             Teams Screen                             -->
+    <string name="count_teams">Выберите количество команд</string>
+    <string name="team_hint">Перечислите игроков через пробел</string>
 </resources>
