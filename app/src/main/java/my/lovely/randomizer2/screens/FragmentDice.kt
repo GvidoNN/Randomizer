@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.launch
 import my.lovely.randomizer2.R
 
 class FragmentDice : Fragment(R.layout.fragment_dice) {

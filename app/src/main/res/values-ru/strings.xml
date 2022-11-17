@@ -5,21 +5,21 @@
     <!--                             Navigation View                             -->
     <string name="coin">Монетка</string>
     <string name="bottle">Бутылочка</string>
-    <string name="teams">Команды</string>
-    <string name="number">Цифра</string>
+    <string name="teams">Команда</string>
+    <string name="number">Число</string>
     <string name="dice">Кости</string>
     <!--                             Coin Screen                             -->
     <string name="tap_coin">Нажмите на монетку</string>
     <string name="tail">Решка</string>
     <string name="head">Орёл</string>
     <!--                             Number Screen                             -->
-    <string name="max_value">Максимальное значение</string>
-    <string name="min_value">Минимальное значеие</string>
+    <string name="max_value">Макс значение</string>
+    <string name="min_value">Мин значеие</string>
     <string name="count_value">Количество значений</string>
     <string name="generate">Сгенерировать</string>
     <string name="value_error">Минимальное больше максимального!</string>
     <string name="no_value_error">Нет значений!</string>
     <!--                             Teams Screen                             -->
     <string name="count_teams">Выберите количество команд</string>
-    <string name="team_hint">Перечислите игроков через пробел</string>
+    <string name="team_hint">Введите имена через пробел</string>
 </resources>

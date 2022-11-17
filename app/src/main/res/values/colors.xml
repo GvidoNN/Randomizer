@@ -10,4 +10,10 @@
     <color name="coinFill">#C1B22F</color>
     <color name="coinAround">#D6C635</color>
     <color name="coinBackground">#1DADED</color>
+    <color name="bottle">#2B5114</color>
+    <color name="bottlefon">#F8D776</color>
+    <color name="dicefon">#7E91FB</color>
+    <color name="dice">#F481A8</color>
+    <color name="numberfon">#A3F8A6</color>
+    <color name="teamsfon">#3EA89E</color>
 </resources>
