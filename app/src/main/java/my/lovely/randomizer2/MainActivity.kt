@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         (application as AppMainState).showAdIfAvailable(this){
-            Toast.makeText(this,"Start App", Toast.LENGTH_LONG).show()
+
         }
     }
 }

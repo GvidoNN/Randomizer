@@ -2,13 +2,10 @@ package my.lovely.randomizer2.screens
 
 import android.app.Activity
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
-import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
@@ -18,7 +15,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import my.lovely.randomizer2.AppMainState
+import my.lovely.randomizer2.InterAdCl
 import my.lovely.randomizer2.R
 
 class FragmentCoin : Fragment(R.layout.fragment_coin) {
@@ -30,13 +27,16 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onCoinTap()
-        loadInterAd()
+        val ad = InterAdCl(context = requireContext())
+        ad.loadInterAd()
+        lifecycleScope.launch{
+            ad.showInterAd()
+        }
     }
 
     private fun onCoinTap() {
         iv_coin = requireView().findViewById(R.id.iv_coin)
         iv_coin.setOnClickListener {
-            showInterAd()
             lifecycleScope.launch{
                 val randomNumber = (1..2).random()
                 if (randomNumber == 1) {
@@ -83,7 +83,8 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
             })
     }
 
-    private fun showInterAd(){
+    private suspend fun showInterAd(){
+        delay(10000)
         if(interAd != null){
             interAd?.fullScreenContentCallback = object : FullScreenContentCallback(){
                 override fun onAdDismissedFullScreenContent() {

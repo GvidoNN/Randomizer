@@ -1,5 +1,6 @@
 package my.lovely.randomizer2.screens
 
+import android.icu.number.NumberRangeFormatter
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -48,20 +49,7 @@ class FragmentNumber : Fragment(R.layout.fragment_number) {
 
     private fun buttonClick() {
         btResult.setOnClickListener {
-            if (edMaxValue.text.toString() == "" || edMinValue.text.toString() == "") {
-                Log.d("MyLog", "Пусто")
-            } else {
-                randomNumbers(
-                    edMinValue.text.toString().toInt(),
-                    edMaxValue.text.toString().toInt(),
-                    countValuesSlider.value.toInt()
-                ).toString()
-            }
-        }
-        if (edMaxValue.text.toString() == "" || edMinValue.text.toString() == "") {
-            Log.d("MyLog", "Пусто")
-        } else {
-            btResult.setOnClickListener {
+            try{
                 Log.d(
                     "MyLog",
                     randomNumbers(
@@ -78,9 +66,12 @@ class FragmentNumber : Fragment(R.layout.fragment_number) {
                     )
                 )
 
+            } catch (e: java.util.NoSuchElementException){
+                Log.d("MyLog","Bigger")
+            } catch (e: java.lang.NumberFormatException ){
+                Log.d("MyLog","Empty")
             }
         }
-
     }
 
     private fun randomNumbers(min: Int, max: Int, count: Int): ArrayList<Int> {
