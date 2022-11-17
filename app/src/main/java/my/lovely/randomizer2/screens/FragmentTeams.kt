@@ -15,10 +15,10 @@ class FragmentTeams : Fragment(R.layout.fragment_teams) {
     lateinit var edNames: EditText
     lateinit var countTeams: Slider
     lateinit var btTeamGenerate: Button
-    lateinit var tvTeam1 : TextView
-    lateinit var tvTeam2 : TextView
-    lateinit var tvTeam3 : TextView
-    lateinit var tvTeam4 : TextView
+    lateinit var tvTeam1: TextView
+    lateinit var tvTeam2: TextView
+    lateinit var tvTeam3: TextView
+    lateinit var tvTeam4: TextView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,7 +27,7 @@ class FragmentTeams : Fragment(R.layout.fragment_teams) {
         onClickButtonGenerateTeam()
     }
 
-    private fun findView(){
+    private fun findView() {
         edNames = requireView().findViewById(R.id.edNames)
         countTeams = requireView().findViewById(R.id.countTeams)
         btTeamGenerate = requireView().findViewById(R.id.btTeamGenerate)
@@ -37,7 +37,7 @@ class FragmentTeams : Fragment(R.layout.fragment_teams) {
         tvTeam4 = requireView().findViewById(R.id.tvTeam4)
     }
 
-    private fun sliderListener(){
+    private fun sliderListener() {
         countTeams.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
             override fun onStartTrackingTouch(slider: Slider) {
             }
@@ -48,46 +48,57 @@ class FragmentTeams : Fragment(R.layout.fragment_teams) {
 
     }
 
-    private fun onClickButtonGenerateTeam(){
+    private fun onClickButtonGenerateTeam() {
         btTeamGenerate.setOnClickListener {
-            Log.d("MyLog", readSplitText(edNames.text.toString(),countTeams.value.toInt()).toString())
+            Log.d(
+                "MyLog",
+                readSplitText(edNames.text.toString(), countTeams.value.toInt()).toString()
+            )
         }
     }
 
-    private fun listToString(team : List<String>) : String{
+    private fun listToString(team: List<String>): String {
         var column = ""
-        team.forEach{ column += "$it \n"}
+        team.forEach { column += "$it \n" }
         return column
     }
 
-    private fun columnTeamGone(){
+    private fun columnTeamGone() {
         tvTeam1.visibility = View.GONE
         tvTeam2.visibility = View.GONE
         tvTeam3.visibility = View.GONE
         tvTeam4.visibility = View.GONE
     }
 
-    private fun readSplitText(text : String, count: Int): List<String> {
+    private fun readSplitText(text: String, count: Int): List<String> {
         var textList = text.split(" ").shuffled()
         var liststep = textList.size / count
         Log.d("MyLog", "Step $liststep")
-        Log.d("MyLog", "List 1 ${textList.subList(0,liststep)} List 2 ${textList.subList(liststep,textList.size)}")
-        when(count){
+        Log.d(
+            "MyLog",
+            "List 1 ${textList.subList(0, liststep)} List 2 ${
+                textList.subList(
+                    liststep,
+                    textList.size
+                )
+            }"
+        )
+        when (count) {
             2 -> {
                 columnTeamGone()
                 tvTeam1.visibility = View.VISIBLE
                 tvTeam2.visibility = View.VISIBLE
-                tvTeam1.text = listToString(textList.subList(0,liststep))
-                tvTeam2.text = listToString(textList.subList(liststep,textList.size))
+                tvTeam1.text = listToString(textList.subList(0, liststep))
+                tvTeam2.text = listToString(textList.subList(liststep, textList.size))
             }
             3 -> {
                 columnTeamGone()
                 tvTeam1.visibility = View.VISIBLE
                 tvTeam2.visibility = View.VISIBLE
                 tvTeam3.visibility = View.VISIBLE
-                tvTeam1.text = listToString(textList.subList(0,liststep))
-                tvTeam2.text = listToString(textList.subList(liststep,liststep*2))
-                tvTeam3.text = listToString(textList.subList(liststep*2,textList.size))
+                tvTeam1.text = listToString(textList.subList(0, liststep))
+                tvTeam2.text = listToString(textList.subList(liststep, liststep * 2))
+                tvTeam3.text = listToString(textList.subList(liststep * 2, textList.size))
             }
             4 -> {
                 columnTeamGone()
@@ -95,18 +106,14 @@ class FragmentTeams : Fragment(R.layout.fragment_teams) {
                 tvTeam2.visibility = View.VISIBLE
                 tvTeam3.visibility = View.VISIBLE
                 tvTeam4.visibility = View.VISIBLE
-                tvTeam1.text = listToString(textList.subList(0,liststep))
-                tvTeam2.text = listToString(textList.subList(liststep,liststep*2))
-                tvTeam3.text = listToString(textList.subList(liststep*2,liststep*3))
-                tvTeam4.text = listToString(textList.subList(liststep*3,textList.size))
+                tvTeam1.text = listToString(textList.subList(0, liststep))
+                tvTeam2.text = listToString(textList.subList(liststep, liststep * 2))
+                tvTeam3.text = listToString(textList.subList(liststep * 2, liststep * 3))
+                tvTeam4.text = listToString(textList.subList(liststep * 3, textList.size))
             }
         }
         return textList
     }
-
-
-
-
 
 
 }

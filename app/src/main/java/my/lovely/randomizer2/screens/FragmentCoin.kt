@@ -29,7 +29,7 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
         onCoinTap()
         val ad = InterAdCl(context = requireContext())
         ad.loadInterAd()
-        lifecycleScope.launch{
+        lifecycleScope.launch {
             ad.showInterAd()
         }
     }
@@ -37,7 +37,7 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
     private fun onCoinTap() {
         iv_coin = requireView().findViewById(R.id.iv_coin)
         iv_coin.setOnClickListener {
-            lifecycleScope.launch{
+            lifecycleScope.launch {
                 val randomNumber = (1..2).random()
                 if (randomNumber == 1) {
                     flipTheCoin(R.drawable.ic_reshka)
@@ -69,10 +69,10 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
         tv_tap.visibility = View.VISIBLE
     }
 
-    private fun loadInterAd(){
+    private fun loadInterAd() {
         val adRequest = AdRequest.Builder().build()
         InterstitialAd.load(requireContext(), "ca-app-pub-3940256099942544/1033173712",
-            adRequest, object:  InterstitialAdLoadCallback(){
+            adRequest, object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     interAd = null
                 }
@@ -83,10 +83,10 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
             })
     }
 
-    private suspend fun showInterAd(){
+    private suspend fun showInterAd() {
         delay(10000)
-        if(interAd != null){
-            interAd?.fullScreenContentCallback = object : FullScreenContentCallback(){
+        if (interAd != null) {
+            interAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
                 override fun onAdDismissedFullScreenContent() {
                     interAd = null
                     loadInterAd()

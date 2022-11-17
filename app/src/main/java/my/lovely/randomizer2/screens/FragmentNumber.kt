@@ -67,9 +67,11 @@ class FragmentNumber : Fragment(R.layout.fragment_number) {
                 )
 
             } catch (e: java.util.NoSuchElementException){
-                Log.d("MyLog","Bigger")
+                edMaxValue.error = getString(R.string.value_error)
+                edMinValue.error = getString(R.string.value_error)
             } catch (e: java.lang.NumberFormatException ){
-                Log.d("MyLog","Empty")
+                edMaxValue.error = getString(R.string.no_value_error)
+                edMinValue.error = getString(R.string.no_value_error)
             }
         }
     }

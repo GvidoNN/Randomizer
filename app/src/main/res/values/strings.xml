@@ -16,6 +16,8 @@
     <string name="min_value">Min value</string>
     <string name="count_value">Count of numbers</string>
     <string name="generate">Generate</string>
+    <string name="value_error">Min value bigger than max!</string>
+    <string name="no_value_error">No value!</string>
     <!--                             Teams Screen                             -->
     <string name="count_teams">Choose a count of teams</string>
     <string name="team_hint">List the players with a space</string>
