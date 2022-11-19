@@ -16,4 +16,8 @@
     <color name="dice">#F481A8</color>
     <color name="numberfon">#A3F8A6</color>
     <color name="teamsfon">#3EA89E</color>
+    <color name="team1">#32F610</color>
+    <color name="team2">#9C27B0</color>
+    <color name="team3">#0C17ED</color>
+    <color name="team4">#F61717</color>
 </resources>

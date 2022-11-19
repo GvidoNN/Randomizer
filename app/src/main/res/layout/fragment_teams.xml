@@ -52,14 +52,14 @@
                 android:id="@+id/tvTeam1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:text="TextView"
-                android:textColor="@color/black"
-                android:textStyle="bold"
+                android:textColor="@color/team1"
                 android:textSize="20sp"
-                android:visibility="gone"
-                android:gravity="center"/>
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tvTeam2"
@@ -67,12 +67,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="TextView"
-                android:textColor="@color/black"
+                android:textColor="@color/team2"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:visibility="gone"
-                android:gravity="center"/>
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tvTeam3"
@@ -80,24 +80,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:layout_weight="1"
-                android:textColor="@color/black"
+                android:gravity="center"
                 android:text="TextView"
-                android:textStyle="bold"
+                android:textColor="@color/team3"
                 android:textSize="20sp"
-                android:visibility="gone"
-                android:gravity="center"/>
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/tvTeam4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
                 android:layout_weight="1"
-                android:textSize="20sp"
-                android:text="TextView"
                 android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/team4"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 android:visibility="gone" />
         </LinearLayout>
 

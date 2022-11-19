@@ -1,7 +1,6 @@
 package my.lovely.randomizer2.screens
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
@@ -50,10 +49,7 @@ class FragmentTeams : Fragment(R.layout.fragment_teams) {
 
     private fun onClickButtonGenerateTeam() {
         btTeamGenerate.setOnClickListener {
-            Log.d(
-                "MyLog",
-                readSplitText(edNames.text.toString(), countTeams.value.toInt()).toString()
-            )
+            readSplitText(edNames.text.toString(), countTeams.value.toInt()).toString()
         }
     }
 
@@ -73,17 +69,7 @@ class FragmentTeams : Fragment(R.layout.fragment_teams) {
     private fun readSplitText(text: String, count: Int): List<String> {
         var textList = text.split(" ").shuffled()
         var liststep = textList.size / count
-        Log.d("MyLog", "Step $liststep")
-        Log.d(
-            "MyLog",
-            "List 1 ${textList.subList(0, liststep)} List 2 ${
-                textList.subList(
-                    liststep,
-                    textList.size
-                )
-            }"
-        )
-        when (count) {
+            when (count) {
             2 -> {
                 columnTeamGone()
                 tvTeam1.visibility = View.VISIBLE

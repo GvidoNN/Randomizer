@@ -1,6 +1,6 @@
 <resources>
     <!--                               System                                   -->
-    <string name="app_name" translatable="false">Randomizer</string>
+    <string name="app_name">Randomizer</string>
     <!--                             Navigation View                             -->
     <string name="coin">Coin</string>
     <string name="bottle">Bottle</string>

@@ -1,18 +1,11 @@
 package my.lovely.randomizer2.screens
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
-import com.google.android.gms.ads.AdError
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import my.lovely.randomizer2.InterAdCl
@@ -22,7 +15,6 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
 
     lateinit var iv_coin: ImageView
     lateinit var tv_tap: TextView
-    private var interAd: InterstitialAd? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -69,41 +61,4 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
         tv_tap.visibility = View.VISIBLE
     }
 
-    private fun loadInterAd() {
-        val adRequest = AdRequest.Builder().build()
-        InterstitialAd.load(requireContext(), "ca-app-pub-3940256099942544/1033173712",
-            adRequest, object : InterstitialAdLoadCallback() {
-                override fun onAdFailedToLoad(p0: LoadAdError) {
-                    interAd = null
-                }
-
-                override fun onAdLoaded(ad: InterstitialAd) {
-                    interAd = ad
-                }
-            })
-    }
-
-    private suspend fun showInterAd() {
-        delay(10000)
-        if (interAd != null) {
-            interAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
-                override fun onAdDismissedFullScreenContent() {
-                    interAd = null
-                    loadInterAd()
-                }
-
-                override fun onAdFailedToShowFullScreenContent(p0: AdError) {
-                    interAd = null
-                    loadInterAd()
-                }
-
-                override fun onAdShowedFullScreenContent() {
-                    interAd = null
-                    loadInterAd()
-                }
-
-            }
-            interAd?.show(requireContext() as Activity)
-        }
-    }
 }
