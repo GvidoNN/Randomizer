@@ -14,7 +14,7 @@ class InterAdCl(var interAd: InterstitialAd? = null, var context: Context) {
 
     fun loadInterAd() {
         val adRequest = AdRequest.Builder().build()
-        InterstitialAd.load(context, "ca-app-pub-7592888554989577/2912079777",
+        InterstitialAd.load(context, "ca-app-pub-7592888554989577/2900296785",
             adRequest, object : InterstitialAdLoadCallback() {
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     interAd = null
