@@ -19,7 +19,10 @@
     <string name="generate">Сгенерировать</string>
     <string name="value_error">Минимальное больше максимального!</string>
     <string name="no_value_error">Нет значений!</string>
+    <string name="no_duplication">Без дублирования</string>
     <!--                             Teams Screen                             -->
     <string name="count_teams">Выберите количество команд</string>
     <string name="team_hint">Введите имена через пробел</string>
+    <!--                             Dice Screen                             -->
+    <string name="shake_or_tap">Потряси кости или нажми на каждый</string>
 </resources>

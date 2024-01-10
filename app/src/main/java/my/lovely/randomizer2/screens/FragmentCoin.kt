@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import my.lovely.randomizer2.InterAdCl
 import my.lovely.randomizer2.R
 
 class FragmentCoin : Fragment(R.layout.fragment_coin) {
@@ -19,11 +18,6 @@ class FragmentCoin : Fragment(R.layout.fragment_coin) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onCoinTap()
-        val ad = InterAdCl(context = requireContext())
-        ad.loadInterAd()
-        lifecycleScope.launch {
-            ad.showInterAd()
-        }
     }
 
     private fun onCoinTap() {

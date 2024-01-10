@@ -29,6 +29,7 @@
             android:layout_gravity="bottom|center"
             android:layout_marginTop="80dp"
             android:cursorVisible="false"
+            android:fontFamily="@font/sf_medium"
             android:text="@string/tap_coin"
             android:textColor="#000000"
             android:textSize="34sp"

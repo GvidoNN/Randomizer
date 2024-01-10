@@ -18,9 +18,12 @@
     <string name="generate">Generate</string>
     <string name="value_error">Min value bigger than max!</string>
     <string name="no_value_error">No value!</string>
+    <string name="no_duplication">No duplication</string>
     <!--                             Teams Screen                             -->
     <string name="count_teams">Choose a count of teams</string>
     <string name="team_hint">List the players with a space</string>
+    <!--                             Dice Screen                             -->
+    <string name="shake_or_tap">Shake the dice or click on each one</string>
 
 
 </resources>

@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import com.google.android.material.slider.Slider
@@ -13,11 +14,12 @@ import kotlin.collections.ArrayList
 
 class FragmentNumber : Fragment(R.layout.fragment_number) {
 
-    lateinit var countValuesSlider: Slider
-    lateinit var btResult: Button
-    lateinit var edMinValue: EditText
-    lateinit var edMaxValue: EditText
-    lateinit var tvConclusion: TextView
+    private lateinit var countValuesSlider: Slider
+    private lateinit var btResult: Button
+    private lateinit var edMinValue: EditText
+    private lateinit var edMaxValue: EditText
+    private lateinit var tvConclusion: TextView
+    private lateinit var checkBox: CheckBox
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,16 +34,15 @@ class FragmentNumber : Fragment(R.layout.fragment_number) {
         edMaxValue = requireView().findViewById(R.id.edMaxValue)
         edMinValue = requireView().findViewById(R.id.edMinValue)
         tvConclusion = requireView().findViewById(R.id.tvConclusion)
+        checkBox = requireView().findViewById(R.id.checkBoxNumber)
     }
 
     private fun sliderListener() {
         countValuesSlider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
             override fun onStartTrackingTouch(slider: Slider) {
-                Log.d("MyLog", "Start Tracking Touch")
             }
 
             override fun onStopTrackingTouch(slider: Slider) {
-                Log.d("MyLog", countValuesSlider.value.toInt().toString())
             }
         })
     }
@@ -49,21 +50,23 @@ class FragmentNumber : Fragment(R.layout.fragment_number) {
     private fun buttonClick() {
         btResult.setOnClickListener {
             try{
-                Log.d(
-                    "MyLog",
-                    randomNumbers(
-                        edMinValue.text.toString().toInt(),
-                        edMaxValue.text.toString().toInt(),
-                        countValuesSlider.value.toInt()
-                    ).toString()
-                )
-                editText(
-                    randomNumbers(
-                        edMinValue.text.toString().toInt(),
-                        edMaxValue.text.toString().toInt(),
-                        countValuesSlider.value.toInt()
+                if(checkBox.isChecked){
+                    editText(
+                        randomNumbersWithoutDublicates(
+                            edMinValue.text.toString().toInt(),
+                            edMaxValue.text.toString().toInt(),
+                            countValuesSlider.value.toInt()
+                        )
                     )
-                )
+                } else {
+                    editText(
+                        randomNumbers(
+                            edMinValue.text.toString().toInt(),
+                            edMaxValue.text.toString().toInt(),
+                            countValuesSlider.value.toInt()
+                        )
+                    )
+                }
 
             } catch (e: java.util.NoSuchElementException){
                 edMaxValue.error = getString(R.string.value_error)
@@ -80,6 +83,28 @@ class FragmentNumber : Fragment(R.layout.fragment_number) {
         for (i in 1..count) {
             randomArray.add((min..max).random())
         }
+        return randomArray
+    }
+
+    private fun randomNumbersWithoutDublicates(min: Int, max: Int, count: Int): ArrayList<Int> {
+        if (count > max - min + 1) {
+            throw IllegalArgumentException("Count should be less than or equal to the range of numbers")
+        }
+
+        val numbers = ArrayList<Int>()
+        for (i in min..max) {
+            numbers.add(i)
+        }
+
+        val randomArray = ArrayList<Int>()
+
+        for (i in 0 until count) {
+            val randomIndex = (min until max - i).random()
+            randomArray.add(numbers[randomIndex])
+            // Swap the selected element with the last element to avoid duplicates
+            numbers[randomIndex] = numbers[max - i - 1]
+        }
+
         return randomArray
     }
 

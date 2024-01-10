@@ -67,39 +67,20 @@ class FragmentTeams : Fragment(R.layout.fragment_teams) {
     }
 
     private fun readSplitText(text: String, count: Int): List<String> {
-        var textList = text.split(" ").shuffled()
-        var liststep = textList.size / count
-            when (count) {
-            2 -> {
-                columnTeamGone()
-                tvTeam1.visibility = View.VISIBLE
-                tvTeam2.visibility = View.VISIBLE
-                tvTeam1.text = listToString(textList.subList(0, liststep))
-                tvTeam2.text = listToString(textList.subList(liststep, textList.size))
-            }
-            3 -> {
-                columnTeamGone()
-                tvTeam1.visibility = View.VISIBLE
-                tvTeam2.visibility = View.VISIBLE
-                tvTeam3.visibility = View.VISIBLE
-                tvTeam1.text = listToString(textList.subList(0, liststep))
-                tvTeam2.text = listToString(textList.subList(liststep, liststep * 2))
-                tvTeam3.text = listToString(textList.subList(liststep * 2, textList.size))
-            }
-            4 -> {
-                columnTeamGone()
-                tvTeam1.visibility = View.VISIBLE
-                tvTeam2.visibility = View.VISIBLE
-                tvTeam3.visibility = View.VISIBLE
-                tvTeam4.visibility = View.VISIBLE
-                tvTeam1.text = listToString(textList.subList(0, liststep))
-                tvTeam2.text = listToString(textList.subList(liststep, liststep * 2))
-                tvTeam3.text = listToString(textList.subList(liststep * 2, liststep * 3))
-                tvTeam4.text = listToString(textList.subList(liststep * 3, textList.size))
-            }
+        val textList = text.split(" ").shuffled()
+
+        val teamTextViews = listOf(tvTeam1, tvTeam2, tvTeam3, tvTeam4)
+
+        columnTeamGone()
+
+        for (i in 0 until count) {
+            teamTextViews[i].visibility = View.VISIBLE
+            val startIndex = (i * textList.size) / count
+            val endIndex = ((i + 1) * textList.size) / count
+            teamTextViews[i].text = listToString(textList.subList(startIndex, endIndex))
         }
+
         return textList
     }
-
 
 }
